@@ -8,13 +8,13 @@ import { WebService } from '../web.service';
 })
 export class CadastrarComponent implements OnInit {
 
-  produto = {title : "", price: 0.0, description: ""};
+  produto = { title: "", price: 0.0, description: "" };
 
-  constructor(private web : WebService) { }
+  constructor(private web: WebService) { }
 
   cadastrar() {
     this.web.cadastrarProduto(this.produto).subscribe(res => {
-      if(res.ok == true) {
+      if (res.ok == true) {
         alert("O cadastro foi realizado com sucesso");
       } else {
         alert("O cadastro não foi realizado!");
